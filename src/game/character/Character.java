@@ -1,0 +1,44 @@
+package game.character;
+
+import game.tile.Tile;
+import game.player.Player;
+import game.resource.Resource;
+
+public abstract class Character {
+	private int goldQuantity;
+	private Tile tile;
+	private Player player;
+	
+	
+	public Character(int goldQuantity, Tile tile, Player player) {
+		this.goldQuantity = goldQuantity;
+		this.tile = tile;
+		this.player = player;
+	}
+	
+	public abstract Resource collectResource();
+
+	public int getGoldQuantity() {
+		return goldQuantity;
+	}
+
+	public Tile getTile() {
+		return tile;
+	}
+
+
+	public void setTile(Tile tile) {
+		this.tile = tile;
+	}
+
+	public Player getPlayer() {
+		return player;
+	}
+
+
+	public void changePlayer(Player player) {
+		this.player = player;
+	}
+	
+	
+}
