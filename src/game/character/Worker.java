@@ -1,5 +1,7 @@
 package game.character;
 
+import java.util.List;
+
 import game.player.Player;
 import game.resource.Resource;
 import game.tile.Tile;
@@ -9,7 +11,7 @@ public class Worker extends Character{
 		super(goldQuantity, tile, player);
 	}
 	
-	public Resource collectResource() {
+	public List<Resource> collectResources() {
 		return null;
 	}
 }
