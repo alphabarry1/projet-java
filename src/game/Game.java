@@ -18,7 +18,15 @@ public class Game {
 		this.players.add(player);
 	}
 	
-	public void play(){}
+	public void play(){
+		while(this.turns > 0) {
+			for(int i=0; i<this.players.size(); i++) {
+				// Time for a player to play
+				System.out.print("");
+			}			
+			this.turns--;
+		}
+	}
 	
 	public Player getPlayer(int i){
 		return this.players.get(i);
