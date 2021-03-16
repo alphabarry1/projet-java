@@ -1,5 +1,6 @@
 package game.character;
 
+import game.character.exception.ArmySizeException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,10 +16,14 @@ public class Army extends Character{
 	public static int ARMY_MIN_SIZE = 1;
 	public static int ARMY_MAX_SIZE = 5;
 	
-	public Army(int goldQuantity, Tile tile, Player player, int size, int food) {
+	public Army(int goldQuantity, Tile tile, Player player, int size, int food) throws ArmySizeException{
 		super(goldQuantity, tile, player);
-		this.size = size;
 		this.food = food;
+		if(size >= ARMY_MIN_SIZE && size <= ARMY_MAX_SIZE) {
+			this.size = size;
+		}else {
+			throw new ArmySizeException("Size of the army is between 1 and 5");
+		}
 	}
 	
 	public int getSize() {
@@ -69,6 +74,7 @@ public class Army extends Character{
 	 * Decreases the number of warriors by the half.
 	 */
 	public void removeWarriors(){
+		// this.size = this.size/2;
 		this.size -= (this.size / 2);
 	}
 	

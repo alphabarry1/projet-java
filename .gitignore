@@ -1,2 +1,5 @@
-.git
+.classpath
+.project
+/.git
 /bin
+/bin/*
