@@ -5,6 +5,7 @@ import game.Board;
 public abstract class Player {
 	private Board board; 
 	
+	
 	public Player(Board board){
 		this.board = board;
 	}
