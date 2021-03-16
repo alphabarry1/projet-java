@@ -43,5 +43,4 @@ public abstract class Tile {
 	public void addResource(Resource resource) {
 		this.resources.add(resource);
 	}
-
 }
