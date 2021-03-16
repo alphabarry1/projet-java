@@ -1,12 +1,9 @@
 package game.character;
 
-<<<<<<< HEAD
 import game.character.exception.ArmySizeException;
-=======
 import java.util.ArrayList;
 import java.util.List;
 
->>>>>>> 47014919a3c3cea126dbf1ce859897cfc4780e4e
 import game.player.Player;
 import game.resource.Resource;
 import game.tile.Desert;
@@ -77,9 +74,7 @@ public class Army extends Character{
 	 * Decreases the number of warriors by the half.
 	 */
 	public void removeWarriors(){
-<<<<<<< HEAD
-		this.size = this.size/2;
-=======
+		// this.size = this.size/2;
 		this.size -= (this.size / 2);
 	}
 	
@@ -95,7 +90,6 @@ public class Army extends Character{
 			else if (resource == Resource.WHEAT)
 				this.food += 5;
 		}
->>>>>>> 47014919a3c3cea126dbf1ce859897cfc4780e4e
 	}
 	
 	/**
@@ -139,12 +133,5 @@ public class Army extends Character{
 			this.increaseGoldQuantity(1);
 		}
 	}
-<<<<<<< HEAD
-	
-	public void attack(Army a){
-		
-	}
-=======
->>>>>>> 47014919a3c3cea126dbf1ce859897cfc4780e4e
 	
 }
