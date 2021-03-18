@@ -2,7 +2,6 @@ package game;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import game.tile.Tile;
 
 public class Board {
@@ -13,7 +12,20 @@ public class Board {
 	public Board(int width, int height) {
 		this.width = width;
 		this.height = height;
+		this.init(width, height);
+	}
+
+	/**
+	*
+	*/
+	public void init(int width, int height){
 		this.tiles = new Tile[height][width];
+		for(int i=0; i<height; i++){
+			for(int j=0; j<width; j++){
+			
+			}
+		}
+
 	}
 
 	public int getWidth() {
