@@ -1,15 +1,20 @@
 package game.player;
 
 import game.Board;
+import game.character.Worker;
 import game.tile.Tile;
 import game.player.Player;
 
 
 public class WarPlayer extends Player{
-	private int numberofGoldCoinsbydefault= 15;
+	private static final int GOLD_QUANTITY_DEFAULT = 15;
 
 	public WarPlayer(Board board) {
+<<<<<<< HEAD
 		super(board);
+=======
+		super(GOLD_QUANTITY_DEFAULT, board);
+>>>>>>> 3bfc45d3fdcbceb06ab984530586ac0e9d0e04a5
 		// TODO Auto-generated constructor stub	
 	}
 
@@ -24,6 +29,11 @@ public class WarPlayer extends Player{
 		
 	}
 	public void deployArmy(int s, Tile t) {
+		
+	}
+	
+	public void payWorker(Worker worker) {
+		Tile tile = worker.getTile();
 		
 	}
 	
