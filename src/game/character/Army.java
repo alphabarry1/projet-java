@@ -130,7 +130,7 @@ public class Army extends Character{
 		}
 		else if  (a.getSize() < this.size && this.getPlayer() == a.getPlayer()){
 			a.addWarriors();
-			this.increaseGoldQuantity(1);
+			this.increaseGoldQuantity(1);	      
 		}
 	}
 	

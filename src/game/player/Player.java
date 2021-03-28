@@ -6,11 +6,17 @@ import game.character.Character;
 import game.resource.Resource;
 import game.Board;
 
+
 public abstract class Player {
 	private int goldQuantity;
 	private List<Character> characters;
 	private List<Resource> resources;
 	private Board board;
+	
+	public Player(Board board){
+		this.goldQuantity = 0;
+		this.board = board;
+	}
 	
 	public Player(int goldQuantity, Board board){
 		this.goldQuantity = goldQuantity;
