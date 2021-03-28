@@ -16,7 +16,7 @@ public class Worker extends Character{
 	public List<Resource> collectResources() {
 		return null;
 	}
-	public int account(int nbGold) {
+	public void account(int nbGold) {
 		this.salaryGold +=nbGold;
 	}
 }

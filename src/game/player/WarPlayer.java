@@ -9,7 +9,7 @@ public class WarPlayer extends Player{
 	private int numberofGoldCoinsbydefault= 15;
 
 	public WarPlayer(Board board) {
-		super(numberofGoldCoinsbydefault,board);
+		super(board);
 		// TODO Auto-generated constructor stub	
 	}
 
