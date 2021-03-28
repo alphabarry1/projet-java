@@ -20,6 +20,7 @@ public class Board {
 	*/
 	public void init(int width, int height){
 		this.tiles = new Tile[height][width];
+		int nTilesOcean = 0;
 		for(int i=0; i<height; i++){
 			for(int j=0; j<width; j++){
 			

@@ -1,7 +1,6 @@
 package game;
 
 import java.util.List;
-
 import game.player.Player;
 
 public class Game {
