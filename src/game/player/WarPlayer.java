@@ -6,10 +6,10 @@ import game.player.Player;
 
 
 public class WarPlayer extends Player{
-	private int numberofGoldCoinsbydefault= 15;
+	private static final int GOLD_QUANTITY_DEFAULT = 15;
 
 	public WarPlayer(Board board) {
-		super(numberofGoldCoinsbydefault,board);
+		super(GOLD_QUANTITY_DEFAULT, board);
 		// TODO Auto-generated constructor stub	
 	}
 
