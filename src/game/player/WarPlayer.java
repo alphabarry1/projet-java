@@ -1,6 +1,7 @@
 package game.player;
 
 import game.Board;
+import game.character.Worker;
 import game.tile.Tile;
 import game.player.Player;
 
@@ -24,6 +25,11 @@ public class WarPlayer extends Player{
 		
 	}
 	public void deployArmy(int s, Tile t) {
+		
+	}
+	
+	public void payWorker(Worker worker) {
+		Tile tile = worker.getTile();
 		
 	}
 	
