@@ -27,53 +27,85 @@ public class Board {
 	*/
 	public void init(int width, int height){
 		this.tiles = new Tile[height][width];
-		int nTilesOcean = 0;
-		for(int x=0; x<height; x++){
-			for(int y=0; y<width; y++){
-				Random random = new Random();
-				int rand = random.nextInt(5 - 1 + 1) + 1;
-				
-				switch(rand) {
-				case 1 :
-					this.tiles[x][y] = new Ocean(x, y);
-					nTilesOcean++;
-					break;
-				case 2 :
-					this.tiles[x][y] = new Mountain(x, y);
-					break;
-				case 3 :
-					this.tiles[x][y] = new Plain(x, y);
-					break;
-				case 4 :
-					this.tiles[x][y] = new Forest(x, y);
-					break;
-				case 5 :
-					this.tiles[x][y] = new Desert(x, y);
-					break;		
-				}
-				
-				if (this.tiles[x][y] instanceof Ocean) {
-					if (x-1 >= 0) {
-						this.tiles[x-1][y] = new Ocean(x-1, y);
-						nTilesOcean++;
-					}
-					if (x+1 <= this.width-1) {
-						this.tiles[x+1][y] = new Ocean(x+1, y);
-						nTilesOcean++;
-					}
-					if (y-1 >= 0) {
-						this.tiles[x][y-1] = new Ocean(x, y-1);
-						nTilesOcean++;
-					}
-					if (y+1 <= this.height-1) {
-						this.tiles[x][y+1] = new Ocean(x, y+1);
-						nTilesOcean++;
-					}
+		
+		int nbMinOcean = (2 * height * width) / 3;
+		
+		Random random = new Random();
+		int xOcean = random.nextInt(width);
+		int yOcean = random.nextInt(height);
+		
+		// draw the minimum number of ocean tiles
+		while (nbMinOcean > 0) {
+			this.tiles[xOcean][yOcean] = new Ocean(xOcean, yOcean);
+			xOcean++;
+			if (xOcean == width) {
+				yOcean++;
+				xOcean = 0;	
+				if (yOcean == height) {
+					yOcean = 0;
 				}
 			}
+			nbMinOcean--;
 		}
-		if (nTilesOcean < ((width * height * 2) / 3)) {
-			this.init(width, height);
+		
+		// draw others tiles
+		for(int x=0; x<height; x++){
+            for(int y=0; y<width; y++){
+	            if (this.tiles[x][y]  == null) {
+	            	// if the tile is not around ocean
+	            	if (!this.isAroundOcean(x, y)) {
+		            	int rand = random.nextInt(5);
+		            	
+		            	switch(rand) {
+		                case 0 :
+		                    this.tiles[x][y] = new Ocean(x, y);
+		                    break;
+		                case 1 :
+		                    this.tiles[x][y] = new Mountain(x, y);
+		                    break;
+		                case 2 :
+		                    this.tiles[x][y] = new Plain(x, y);
+		                    break;
+		                case 3 :
+		                    this.tiles[x][y] = new Forest(x, y);
+		                    break;
+		                case 4 :
+		                    this.tiles[x][y] = new Desert(x, y);
+		                    break;        
+		                }
+	            	}
+	            	// if the tile is around ocean
+	            	else {
+	            		this.tiles[x][y] = new Ocean(x, y);
+	            	}
+	            }
+            }
+		}
+	}
+	
+	/**
+	 * Checks if the tile is around ocean
+	 * 
+	 * @param x: the position at width
+	 * @param y: the position a height
+	 * 
+	 * @return true if the tile is around ocean
+	 */
+	public boolean isAroundOcean(int x, int y) {
+		List<Tile> adjTiles = this.getAdjacentTiles(this.tiles[x][y]);
+		
+		int nbOcean = 0;
+		
+		for(Tile tile : adjTiles) {
+			if (tile instanceof Ocean) {
+				nbOcean++;
+			}
+		}
+		
+		if (nbOcean == adjTiles.size()) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 
