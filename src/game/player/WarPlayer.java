@@ -10,12 +10,7 @@ public class WarPlayer extends Player{
 	private static final int GOLD_QUANTITY_DEFAULT = 15;
 
 	public WarPlayer(Board board) {
-<<<<<<< HEAD
-		super(board);
-=======
 		super(GOLD_QUANTITY_DEFAULT, board);
->>>>>>> 3bfc45d3fdcbceb06ab984530586ac0e9d0e04a5
-		// TODO Auto-generated constructor stub	
 	}
 
 	@Override
