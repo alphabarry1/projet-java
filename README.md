@@ -14,6 +14,8 @@
 # Livrables
 
 ## Livrable 1
+![Diagramme UML Personnage](uml/images/personnage.png)
+![Diagramme UML Personnage Players](uml/images/player_personnage.png)
 
 ### Atteinte des objectifs
 
