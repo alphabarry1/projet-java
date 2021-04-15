@@ -45,6 +45,7 @@ jeu de guerre et du jeu agricole .
 nous n'avons pas eu des difficultés dans cette partie
 
 ## Livrable 2
+![Diagramme UML Plateau](uml/images/diagramme_uml_pateau.png)
 
 
 ### Atteinte des objectifs
