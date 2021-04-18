@@ -19,4 +19,10 @@ public class Worker extends Character{
 	public void account(int nbGold) {
 		this.salaryGold +=nbGold;
 	}
+
+	@Override
+	public int getSize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
