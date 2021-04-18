@@ -10,4 +10,9 @@ public class Mountain extends Tile {
 	public void produceResource(){
 		this.addResource(Resource.WHEAT);
 	}
+
+	@Override
+	public int getPoints() {
+		return 4;
+	}
 }

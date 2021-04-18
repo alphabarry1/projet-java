@@ -17,6 +17,13 @@ public abstract class Tile {
 		this.y = y;
 		this.resources = new ArrayList<Resource>();
 	}
+	
+	/**
+	 * Gets the needed food for the associated character.
+	 */
+	public int getNeededFood() {
+		return this.character.getSize();
+	}
 
 	public int getX() {
 		return x;
@@ -43,4 +50,9 @@ public abstract class Tile {
 	public void addResource(Resource resource) {
 		this.resources.add(resource);
 	}
+	
+	/**
+	 * Gets number of points on a tile
+	 */
+	public abstract int getPoints();
 }

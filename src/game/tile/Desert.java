@@ -10,4 +10,16 @@ public class Desert extends Tile {
 	public void produceResource(){
 		this.addResource(Resource.SAND);
 	}
+	
+	/**
+	 * Gets the needed food.
+	 */
+	public int getNeededFood() {
+		return this.getCharacter().getSize() * 2;
+	}
+
+	@Override
+	public int getPoints() {
+		return 4;
+	}
 }

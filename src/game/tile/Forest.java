@@ -10,4 +10,9 @@ public class Forest extends Tile {
 	public void produceResource(){
 		this.addResource(Resource.WOOD);
 	}
+
+	@Override
+	public int getPoints() {
+		return 2;
+	}
 }

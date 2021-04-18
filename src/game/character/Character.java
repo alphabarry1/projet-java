@@ -51,5 +51,5 @@ public abstract class Character {
 		this.player = player;
 	}
 	
-	
+	public abstract int getSize();
 }

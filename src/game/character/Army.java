@@ -6,7 +6,6 @@ import java.util.List;
 
 import game.player.Player;
 import game.resource.Resource;
-import game.tile.Desert;
 import game.tile.Tile;
 
 public class Army extends Character{
@@ -100,10 +99,8 @@ public class Army extends Character{
 		
 		this.transformResouces();
 		
-		if (tile instanceof Desert)
-			this.food -= this.size*2;	
-		else
-			this.food -= this.size;
+		tile.setCharacter(this);
+		this.food -= tile.getNeededFood();
 		
 		// if the quantity of food in under 0
 		if (this.food < 0) {
