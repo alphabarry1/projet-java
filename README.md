@@ -42,7 +42,7 @@ nous n'avons pas eu des difficultés dans cette partie.
 ### Difficultés restant à résoudre
 
 ## Livrable 4
-
+![Diagramme.pdf]
 ### Atteinte des objectifs
 
 ### Difficultés restant à résoudre
