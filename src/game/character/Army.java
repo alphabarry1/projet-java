@@ -52,7 +52,7 @@ public class Army extends Character{
 		resources.addAll(this.getTile().getResources());
 		
 		// Getting the resources in the adjacent tiles
-		List<Tile> adjacentes = this.getPlayer().getBoard().getAdjacentTiles(this.getTile());
+		List<Tile> adjacentes = this.getPlayer().getBoard().getAdjacentTiles(this.getTile().getX(), this.getTile().getY());
 		for (Tile tile : adjacentes) 
 			resources.addAll(tile.getResources());
 		
@@ -107,6 +107,7 @@ public class Army extends Character{
 			this.increaseGoldQuantity(1);
 			this.size = 0;
 			// army loses the tile
+			tile.setCharacter(null);
 			this.setTile(null);
 		}
 	}
@@ -129,6 +130,8 @@ public class Army extends Character{
 			a.addWarriors();
 			this.increaseGoldQuantity(1);	      
 		}
+		System.out.println("army a "+a.getTile());
+		System.out.println("army this "+this.getTile());
 	}
 	
 }

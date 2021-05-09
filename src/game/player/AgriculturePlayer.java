@@ -4,8 +4,8 @@ import game.Board;
 
 public class AgriculturePlayer extends Player{
 
-	public AgriculturePlayer(int goldQuantity, Board board) {
-		super(goldQuantity, board);
+	public AgriculturePlayer(int goldQuantity, Board board, String name) {
+		super(goldQuantity, board, name);
 	}
 
 	public int getScore() {

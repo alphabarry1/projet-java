@@ -12,21 +12,33 @@ public abstract class Player {
 	private List<Character> characters;
 	private List<Resource> resources;
 	private Board board;
+	private String name;
 	
-	public Player(Board board){
-		this.goldQuantity = 0;
-		this.board = board;
-	}
-	
-	public Player(int goldQuantity, Board board){
+	public Player(int goldQuantity, Board board, String name){
 		this.goldQuantity = goldQuantity;
 		this.board = board;
+		this.name = name;
 	}
 	
 	public abstract int getScore();
 	
 	public int getGoldQuantity() {
 		return this.goldQuantity;
+	}
+	
+	/**
+	 * Gets player name
+	 */
+	public String getName(){ 
+		return this.name;
+	}
+	
+	/**
+	 * Sets player name
+	 * @param name the player name
+	 */
+	public void SetName(String name) {
+		this.name = name;
 	}
 	
 	/**

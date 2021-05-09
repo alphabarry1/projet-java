@@ -19,15 +19,13 @@ public class Board {
 	public Board(int width, int height) {
 		this.width = width;
 		this.height = height;
-		this.init(width, height);
+		this.tiles = new Tile[width][height];
 	}
 
 	/**
 	* Initializes the board tiles.
 	*/
-	public void init(int width, int height){
-		this.tiles = new Tile[height][width];
-		
+	public void init(){
 		int nbMinOcean = (2 * height * width) / 3;
 		
 		Random random = new Random();
@@ -49,13 +47,13 @@ public class Board {
 		}
 		
 		// draw others tiles
-		for(int x=0; x<height; x++){
-            for(int y=0; y<width; y++){
+		for(int x=0; x < height; x++){
+            for(int y=0; y < width; y++){
+            	
 	            if (this.tiles[x][y]  == null) {
 	            	// if the tile is not around ocean
 	            	if (!this.isAroundOcean(x, y)) {
 		            	int rand = random.nextInt(5);
-		            	
 		            	switch(rand) {
 		                case 0 :
 		                    this.tiles[x][y] = new Ocean(x, y);
@@ -79,6 +77,7 @@ public class Board {
 	            		this.tiles[x][y] = new Ocean(x, y);
 	            	}
 	            }
+	            System.out.println(x +" "+ y +" "+this.tiles[x][y]);
             }
 		}
 	}
@@ -92,8 +91,7 @@ public class Board {
 	 * @return true if the tile is around ocean
 	 */
 	public boolean isAroundOcean(int x, int y) {
-		List<Tile> adjTiles = this.getAdjacentTiles(this.tiles[x][y]);
-		
+		List<Tile> adjTiles = this.getAdjacentTiles(x, y);
 		int nbOcean = 0;
 		
 		for(Tile tile : adjTiles) {
@@ -134,13 +132,11 @@ public class Board {
 	/**
 	 * Gets the adjacent tiles
 	 * 
-	 * @param tile the tile whom to get its adjacent
+	 * @param x the abscissa
+	 * @param y the ordinate
 	 * @return list of tile
 	 */
-	public List<Tile> getAdjacentTiles(Tile tile){
-		int x = tile.getX();
-		int y = tile.getY();
-		
+	public List<Tile> getAdjacentTiles(int x, int y){
 		// initialize the list of result tiles
 		List<Tile> tiles = new ArrayList<Tile>();
 		

@@ -47,6 +47,14 @@ public abstract class Tile {
 		return resources;
 	}
 	
+	/**
+	 * Checks if the tile is used by a character
+	 * @return true if there is a character inside the tile
+	 */
+	public boolean isOccuped() {
+		return this.getCharacter() != null;
+	}
+	
 	public void addResource(Resource resource) {
 		this.resources.add(resource);
 	}
